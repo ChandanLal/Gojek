@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="@dimen/activity_padding_horizontal">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="@dimen/placeholder_image"
+        android:layout_height="@dimen/placeholder_image"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#dddddd"
+        android:layout_marginRight="@dimen/padding_10"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/thumbnail"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:textColor="@color/item_name"
+        android:textSize="@dimen/name" />
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_toRightOf="@id/thumbnail"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/description"
+        android:textSize="@dimen/description" />
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description"
+        android:layout_toRightOf="@id/thumbnail"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/description"
+        android:textSize="@dimen/description" />
+    <ImageView
+        android:id="@+id/langcolor"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/url"
+        
+        android:layout_toRightOf="@id/thumbnail"
+        android:scaleType="centerCrop"
+       />
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/url"
+        android:layout_toRightOf="@id/langcolor"
+        android:textColor="@color/description"
+        android:textSize="@dimen/description" />
+    <ImageView
+        android:id="@+id/starcolor"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/url"
+        android:background="@drawable/star"
+        android:layout_toRightOf="@id/language"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/url"
+        android:layout_toRightOf="@id/starcolor"
+        android:textColor="@color/description"
+        android:textSize="@dimen/description" />
+    <ImageView
+        android:id="@+id/forkimg"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/url"
+        android:background="@drawable/fork"
+        android:layout_toRightOf="@id/star"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/fork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/url"
+        android:layout_toRightOf="@id/forkimg"
+        android:textColor="@color/description"
+        android:textSize="@dimen/description" />
+</RelativeLayout >
