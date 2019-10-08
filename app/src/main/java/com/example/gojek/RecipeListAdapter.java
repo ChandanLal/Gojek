@@ -2,6 +2,7 @@ package com.example.gojek;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.My
     private Animation animationDown;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, description, url, chef, timestamp,forks,stars,languageColor,language;
-        public ImageView thumbnail,lang;
+        public ImageView thumbnail,lang,starcolor,forking;
 
         public MyViewHolder(View view) {
             super(view);
@@ -36,6 +37,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.My
             stars = view.findViewById(R.id.star);
             lang = view.findViewById(R.id.langcolor);
             language= view.findViewById(R.id.language);
+            starcolor=view.findViewById(R.id.starcolor);
+            forking = view.findViewById(R.id.forkimg);
         }
     }
 
@@ -65,22 +68,51 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.My
        holder.url.setText(recipe.getUrl());
        holder.forks.setText(recipe.getForks());
         holder.language.setText(recipe.getLanguage());
-
+//       String color=recipe.getLanguageColor().trim();
+       /* if (recipe.languageColor!= null) {
+            holder.lang.setBackgroundColor(Color.parseColor(color));
+        }*/
+       /* try{
+           // color = Color.parseColor(RemoteConfigSingleton.getInstance().getEventColor());
+            holder.lang.setBackgroundColor(Color.parseColor(color));
+        }catch (IllegalArgumentException e){
+            //color = Color.parseColor("#E53935");
+            holder.lang.setBackgroundColor(Color.parseColor("FFFFFF"));
+        }*/
         Glide.with(context)
                 .load(recipe.getAvatar())
                 .into(holder.thumbnail);
         holder.url.setVisibility(View.GONE);
+        holder.lang.setVisibility(View.GONE);
+        holder.language.setVisibility(View.GONE);
+        holder.forks.setVisibility(View.GONE);
+        holder.forking.setVisibility(View.GONE);
+        holder.stars.setVisibility(View.GONE);
+        holder.starcolor.setVisibility(View.GONE);
+
         animationUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
         animationDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
-        holder.description.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if( holder.url.isShown()){
                     holder.url.setVisibility(View.GONE);
+                    holder.lang.setVisibility(View.GONE);
+                    holder.language.setVisibility(View.GONE);
+                    holder.forks.setVisibility(View.GONE);
+                    holder.forking.setVisibility(View.GONE);
+                    holder.stars.setVisibility(View.GONE);
+                    holder.starcolor.setVisibility(View.GONE);
                     holder.url.startAnimation(animationUp);
                 }
                 else{
                     holder.url.setVisibility(View.VISIBLE);
+                    holder.lang.setVisibility(View.VISIBLE);
+                    holder.language.setVisibility(View.VISIBLE);
+                    holder.forks.setVisibility(View.VISIBLE);
+                    holder.forking.setVisibility(View.VISIBLE);
+                    holder.stars.setVisibility(View.VISIBLE);
+                    holder.starcolor.setVisibility(View.VISIBLE);
                     holder.url.startAnimation(animationDown);
                 }
             }

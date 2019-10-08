@@ -24,8 +24,9 @@
         android:ellipsize="end"
         android:fontFamily="sans-serif-medium"
         android:maxLines="1"
-        android:textColor="@color/item_name"
-        android:textSize="@dimen/name" />
+        android:layout_marginTop="16dp"
+        android:textColor="#52575C"
+        android:textSize="12dp" />
 
 
     <TextView
@@ -34,28 +35,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
         android:layout_toRightOf="@id/thumbnail"
-        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="16dp"
         android:ellipsize="end"
         android:maxLines="3"
-        android:textColor="@color/description"
-        android:textSize="@dimen/description" />
+        android:textColor="#52575C"
+        android:textSize="15dp" />
     <TextView
         android:id="@+id/url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/description"
         android:layout_toRightOf="@id/thumbnail"
-        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
         android:ellipsize="end"
         android:maxLines="3"
-        android:textColor="@color/description"
-        android:textSize="@dimen/description" />
-    <ImageView
+        android:textColor="#52575C"
+        android:textSize="12dp" />
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/langcolor"
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_below="@id/url"
-        
+        android:background="#D61919"
+        app:civ_border_color="#dddddd"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_toRightOf="@id/thumbnail"
         android:scaleType="centerCrop"
        />
@@ -64,14 +71,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/url"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_toRightOf="@id/langcolor"
-        android:textColor="@color/description"
-        android:textSize="@dimen/description" />
+        android:textColor="#52575C"
+        android:textSize="12dp" />
     <ImageView
         android:id="@+id/starcolor"
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_below="@id/url"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/star"
         android:layout_toRightOf="@id/language"
         android:scaleType="centerCrop"
@@ -81,15 +93,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/url"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_toRightOf="@id/starcolor"
-        android:textColor="@color/description"
-        android:textSize="@dimen/description" />
+        android:textColor="#52575C"
+        android:textSize="12dp"/>
     <ImageView
         android:id="@+id/forkimg"
         android:layout_width="16dp"
         android:layout_height="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_below="@id/url"
         android:background="@drawable/fork"
+        android:layout_marginRight="4dp"
         android:layout_toRightOf="@id/star"
         android:scaleType="centerCrop"
         />
@@ -98,7 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/url"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_toRightOf="@id/forkimg"
-        android:textColor="@color/description"
-        android:textSize="@dimen/description" />
+        android:textColor="#52575C"
+        android:textSize="12dp" />
 </RelativeLayout >
